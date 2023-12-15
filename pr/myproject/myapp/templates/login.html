@@ -1,0 +1,20 @@
+<!-- myapp/templates/login.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block header %}Login{% endblock %}
+
+{% block content %}
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label for="id_username">Username:</label>
+    <input type="text" name="username" required>
+    <br>
+    <label for="id_password">Password:</label>
+    <input type="password" name="password" required>
+    <br>
+    <input type="submit" value="Login">
+  </form>
+{% endblock %}
